@@ -41,6 +41,12 @@ class TodoList extends Component {
     });
   };
 
+  deleteCompleted = () => {
+    this.setState({
+      todos: this.state.todos.filter((todo) => !todo.complete),
+    });
+  };
+
   render() {
     let todos = [];
 
@@ -76,6 +82,9 @@ class TodoList extends Component {
           <button onClick={() => this.updateTodoToShow("complete")}>
             Completed
           </button>
+        </div>
+        <div>
+          <button onClick={this.deleteCompleted}>Delete completed</button>
         </div>
       </>
     );
