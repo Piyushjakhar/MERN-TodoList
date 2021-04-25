@@ -5,7 +5,6 @@ import Todo from "./Todo";
 class TodoList extends Component {
   state = {
     todos: [],
-   
   };
 
   addTodo = (todo) => {
@@ -29,8 +28,6 @@ class TodoList extends Component {
     });
   };
 
-
-
   handleDeleteTodo = (id) => {
     this.setState({
       todos: this.state.todos.filter((todo) => todo.id !== id),
@@ -44,10 +41,9 @@ class TodoList extends Component {
   };
 
   render() {
-    
-
     return (
       <>
+        <h1>Add Your Todo's Here</h1>
         <div>
           <TodoForm onSubmit={this.addTodo} />
           {this.state.todos.map((todo) => (
@@ -62,7 +58,7 @@ class TodoList extends Component {
         <div>
           Todos left: {this.state.todos.filter((todo) => !todo.complete).length}
         </div>
- 
+
         <div>
           <button onClick={this.deleteCompleted}>Delete completed</button>
         </div>
