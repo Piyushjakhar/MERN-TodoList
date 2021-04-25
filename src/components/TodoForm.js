@@ -29,9 +29,10 @@ class TodoForm extends Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <input
+            
             name="text"
             value={this.state.text}
-            placeholder="Type here..."
+            placeholder="Your Todo here..."
             onChange={this.handleChange}
           ></input>
           <button onClick={this.handleSubmit}>Add Todo</button>
