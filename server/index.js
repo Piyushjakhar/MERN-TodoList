@@ -20,8 +20,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(
-  "mongodb+srv://dbUser:dbUserPassword@cluster0.8ow58.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+ mongoose.connect(
+  "mongodb://dbUser:dbUserPassword@cluster0-shard-00-00.8ow58.mongodb.net:27017,cluster0-shard-00-01.8ow58.mongodb.net:27017,cluster0-shard-00-02.8ow58.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-aix88j-shard-0&authSource=admin&retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useCreateIndex: true,
@@ -37,6 +37,7 @@ app.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["profile", "email"] })
 );
+
 
 app.get(
   "/auth/google/redirect",

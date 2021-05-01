@@ -32,8 +32,7 @@ passport.use(
           return done(null, existingUser);
         } else {
           new User({ googleId: profile.id })
-            .save()
-            .then((user) => done(null, user));
+            .save().then((user) => done(null, user));
         }
       });
     }

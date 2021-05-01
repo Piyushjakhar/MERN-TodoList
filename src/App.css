@@ -1,3 +1,57 @@
 .App {
   text-align: center;
+  
+}
+ 
+.addtodobtn {
+
+  color: white;
+  padding: 8px 5px;
+  background: rgb(25, 219, 233);
+  width: 40px;
+}
+
+.deletetodobtn {
+  
+  float: right;
+
+}
+
+.inputform {
+  padding: 8px 5px;
+  margin-bottom: 20px;;
+}
+
+.cursiveFont {
+  font-family: 'Shadows Into Light', cursive;
+  
+}
+
+.todoleft {
+  font-size: 20px;
+  padding-right: 10px;
+
+  
+}
+
+.deletecomplete {
+  margin-bottom: 10px;
+}
+
+.todoStyle {
+  box-sizing: border-box;
+  border: 1px solid blue;
+  margin-bottom: 5px;
+  /* background-color: turquoise; */
+  color: rgb(17, 3, 3);
+  font-size: large ;
+  padding: 0px 5px;
+  height: 30px;
+  
+  
+  
+}
+
+.homepage {
+  margin-top: 150px;
 }

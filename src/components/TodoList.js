@@ -43,8 +43,23 @@ class TodoList extends Component {
   render() {
     return (
       <>
-        <h1>Add Your Todo's Here</h1>
-        <div>
+        <h1 className="cursiveFont">Add Your Todo's Here</h1>
+        <div style={{marginBottom: "20px"}}>
+        <a href="/">Logout</a>
+        </div>
+        
+          <div className="row justify-content-center">
+              <div className="todoleft">
+                Todos left: {this.state.todos.filter((todo) => !todo.complete).length}
+              </div>
+
+              <div className="deletecomplete">
+                <button onClick={this.deleteCompleted}>Delete completed</button>
+              </div>
+          </div>
+        
+
+        <div style={{marginBottom: "10px"}}>
           <TodoForm onSubmit={this.addTodo} />
           {this.state.todos.map((todo) => (
             <Todo
@@ -55,13 +70,7 @@ class TodoList extends Component {
             />
           ))}
         </div>
-        <div>
-          Todos left: {this.state.todos.filter((todo) => !todo.complete).length}
-        </div>
 
-        <div>
-          <button onClick={this.deleteCompleted}>Delete completed</button>
-        </div>
       </>
     );
   }
